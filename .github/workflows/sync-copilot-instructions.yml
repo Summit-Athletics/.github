@@ -1,0 +1,25 @@
+# Reminder: add GH_PAT secret (repo scope) at
+# https://github.com/Summit-Athletics/.github/settings/secrets/actions
+
+name: Sync copilot-instructions.md to all repos
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/copilot-instructions.md'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v3
+      - uses: BetaHuhn/repo-file-sync-action@v1
+        with:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          CONFIG_PATH: .github/sync.yml
+          PR: false
