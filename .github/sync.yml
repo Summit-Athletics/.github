@@ -2,34 +2,7 @@ group:
   - repos: |
       Summit-Athletics/SummitAthletics.com
       Summit-Athletics/summit-codekit-starter
-      Summit-Athletics/VirginiaSportsMP.com
-      Summit-Athletics/ArmyAClub.com
-      Summit-Athletics/ReedGreenRising.com
-      Summit-Athletics/fullstack-test
-      Summit-Athletics/UNIDomeRenovation.com
-      Summit-Athletics/RiverBendStrategy.com
-      Summit-Athletics/RestoreTheWar.com
-      Summit-Athletics/AZAClub.com
-      Summit-Athletics/UCLAxBigTen.com
-      Summit-Athletics/MountaineersAthleticFund.com
-      Summit-Athletics/FalconAthleticFund.com
-      Summit-Athletics/IAmThirdArena.com
-      Summit-Athletics/NorthernStateFoundation.com
-      Summit-Athletics/WeisbeckerAthleticFund.com
-      Summit-Athletics/TheFriarEdge.com
-      Summit-Athletics/UCAPurpleCircle.com
-      Summit-Athletics/GoldenGopherFund.com-OLD
-      Summit-Athletics/AnteaterClub.com
-      Summit-Athletics/CharlotteEvergreen.com
-      Summit-Athletics/MyRCAF.org
-      Summit-Athletics/TSUAthleticFund.com
-      Summit-Athletics/RebelAthleticFund.com
-      Summit-Athletics/RoseBowlLastingLegacy.com
-      Summit-Athletics/TheMinuteMenClub.com
-      Summit-Athletics/GoBigUW.com
-      Summit-Athletics/YoteFund.com
-      Summit-Athletics/MenOfWestwood.com
-      Summit-Athletics/HurricaneClub.com
+      
     files:
       - source: .github/copilot-instructions.md
         dest: .github/copilot-instructions.md
