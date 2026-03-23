@@ -90,3 +90,4 @@ All source files live under `src/`:
 - Forms must always use `<label>` — never rely on placeholder text as a label
 - Prefer `aria-labelledby` (referencing existing visible text) over `aria-label` when possible
 - Pre-merge: verify Tab-only navigation, run Lighthouse accessibility audit, and spot-check with a screen reader
+- 
