@@ -1,11 +1,10 @@
 # Sync copilot-instructions.md to all Summit-Athletics repos
 #
-# This workflow opens a pull request in every listed repo whenever
-# .github/copilot-instructions.md is updated and pushed to main.
+# Triggers automatically when .github/copilot-instructions.md is pushed to main.
+# Commits directly to each repo's default branch — no pull requests.
 #
-# REQUIRED: Add a Personal Access Token (PAT) with `repo` scope as a secret
-# named GH_PAT at:
-# https://github.com/Summit-Athletics/.github/settings/secrets/actions
+# REQUIRED: GH_PAT secret must be a Personal Access Token with `repo` scope.
+# Add it at: https://github.com/Summit-Athletics/.github/settings/secrets/actions
 
 name: Sync copilot-instructions.md to all repos
 
@@ -20,12 +19,62 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     steps:
-      - uses: actions/checkout@v3
-      - uses: BetaHuhn/repo-file-sync-action@v1
-        with:
+      - uses: actions/checkout@v4
+
+      - name: Push copilot-instructions.md to all repos
+        env:
           GH_PAT: ${{ secrets.GH_PAT }}
-          CONFIG_PATH: .github/sync.yml
-          PR: false 
+        run: |
+          git config --global user.email "copilot-sync@summit-athletics.com"
+          git config --global user.name "Copilot Sync"
+
+          REPOS=(
+            "Summit-Athletics/SummitAthletics.com"
+            "Summit-Athletics/summit-codekit-starter"
+            "Summit-Athletics/VirginiaSportsMP.com"
+            "Summit-Athletics/ArmyAClub.com"
+            "Summit-Athletics/ReedGreenRising.com"
+            "Summit-Athletics/fullstack-test"
+            "Summit-Athletics/UNIDomeRenovation.com"
+            "Summit-Athletics/RiverBendStrategy.com"
+            "Summit-Athletics/RestoreTheWar.com"
+            "Summit-Athletics/AZAClub.com"
+            "Summit-Athletics/UCLAxBigTen.com"
+            "Summit-Athletics/MountaineersAthleticFund.com"
+            "Summit-Athletics/FalconAthleticFund.com"
+            "Summit-Athletics/IAmThirdArena.com"
+            "Summit-Athletics/NorthernStateFoundation.com"
+            "Summit-Athletics/WeisbeckerAthleticFund.com"
+            "Summit-Athletics/TheFriarEdge.com"
+            "Summit-Athletics/UCAPurpleCircle.com"
+            "Summit-Athletics/GoldenGopherFund.com-OLD"
+            "Summit-Athletics/AnteaterClub.com"
+            "Summit-Athletics/CharlotteEvergreen.com"
+            "Summit-Athletics/MyRCAF.org"
+            "Summit-Athletics/TSUAthleticFund.com"
+            "Summit-Athletics/RebelAthleticFund.com"
+            "Summit-Athletics/RoseBowlLastingLegacy.com"
+            "Summit-Athletics/TheMinuteMenClub.com"
+            "Summit-Athletics/GoBigUW.com"
+            "Summit-Athletics/YoteFund.com"
+            "Summit-Athletics/MenOfWestwood.com"
+            "Summit-Athletics/HurricaneClub.com"
+          )
+
+          for REPO in "${REPOS[@]}"; do
+            echo "Syncing to $REPO..."
+            git clone "https://x-access-token:${GH_PAT}@github.com/${REPO}.git" target-repo
+            mkdir -p target-repo/.github
+            cp .github/copilot-instructions.md target-repo/.github/copilot-instructions.md
+            cd target-repo
+            git add .github/copilot-instructions.md
+            if git diff --cached --quiet; then
+              echo "No changes in $REPO, skipping."
+            else
+              git commit -m "chore: sync copilot-instructions.md from .github repo"
+              git push
+            fi
+            cd ..
+            rm -rf target-repo
+          done
