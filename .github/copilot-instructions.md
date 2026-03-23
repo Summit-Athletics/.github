@@ -91,4 +91,4 @@ All source files live under `src/`:
 - Prefer `aria-labelledby` (referencing existing visible text) over `aria-label` when possible
 - Pre-merge: verify Tab-only navigation, run Lighthouse accessibility audit, and spot-check with a screen reader
 
-- 
+
