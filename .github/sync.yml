@@ -1,8 +1,0 @@
-group:
-  - repos: |
-      Summit-Athletics/SummitAthletics.com
-      Summit-Athletics/summit-codekit-starter
-      
-    files:
-      - source: .github/copilot-instructions.md
-        dest: .github/copilot-instructions.md
