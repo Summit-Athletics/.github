@@ -34,10 +34,7 @@ jobs:
             "Summit-Athletics/summit-codekit-starter"
             "Summit-Athletics/VirginiaSportsMP.com"
             "Summit-Athletics/ArmyAClub.com"
-            "Summit-Athletics/ReedGreenRising.com"
-            "Summit-Athletics/fullstack-test"
             "Summit-Athletics/UNIDomeRenovation.com"
-            "Summit-Athletics/RiverBendStrategy.com"
             "Summit-Athletics/RestoreTheWar.com"
             "Summit-Athletics/AZAClub.com"
             "Summit-Athletics/UCLAxBigTen.com"
@@ -48,7 +45,6 @@ jobs:
             "Summit-Athletics/WeisbeckerAthleticFund.com"
             "Summit-Athletics/TheFriarEdge.com"
             "Summit-Athletics/UCAPurpleCircle.com"
-            "Summit-Athletics/GoldenGopherFund.com-OLD"
             "Summit-Athletics/AnteaterClub.com"
             "Summit-Athletics/CharlotteEvergreen.com"
             "Summit-Athletics/MyRCAF.org"
@@ -64,7 +60,6 @@ jobs:
             "Summit-Athletics/SupportThePanthers.com"
             "Summit-Athletics/LionsAthleticFund.com"
             "Summit-Athletics/SupportTheCats.com"
-            "Summit-Athletics/TeamPanthers.com-Redesign"
             "Summit-Athletics/VirginiaAthleticsFoundation.com"
             "Summit-Athletics/Support.MGoBlue.com"
             "Summit-Athletics/TempleOwlClub.com"
@@ -94,7 +89,6 @@ jobs:
             "Summit-Athletics/LightTheStar.com"
             "Summit-Athletics/GoldenGopherFund.com"
             "Summit-Athletics/ElonPhoenixClub.org"
-            "Summit-Athletics/GauchoFund.com-redesign"
             "Summit-Athletics/CofCAthleticFund.com"
             "Summit-Athletics/49erClubSite"
             "Summit-Athletics/RiceStadiumGateway.com"
@@ -104,8 +98,6 @@ jobs:
             "Summit-Athletics/TTUSportsTickets.com"
             "Summit-Athletics/RISEToWin.org"
             "Summit-Athletics/HokieClub.com"
-            "Summit-Athletics/story-template"
-            "Summit-Athletics/story-content"
           )
 
           for REPO in "${REPOS[@]}"; do
