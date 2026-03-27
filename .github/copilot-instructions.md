@@ -25,6 +25,7 @@ All source files live under `src/`:
 - Use **meaningful, descriptive names** — avoid generic names like `div-1` or `box-2`; prefer `icon-wrapper` or `details-area`
 - Attribute order: `id` → `class` → `type`/`name` → `data-*` → `src`/`href`/`for`/`value` → `title`/`alt` → `role`/`aria-*` → `tabindex` → `style`
 - Separate class lists with a single space, no leading/trailing spaces
+- Apply Bootstrap utility classes directly in markup for spacing, typography, color, display, and layout before creating custom classes
 - Use banner-style comments for major page sections, and plain comments for sub-groups within a section:
     ```html
     <!-- ******************** INTRO ******************** -->
@@ -63,6 +64,7 @@ All source files live under `src/`:
 
 ## SCSS
 
+- Prefer Bootstrap's built-in utility classes, components, and variables over writing custom CSS — only write custom SCSS when Bootstrap cannot achieve the desired result
 - Match variable names to class names: `.font-secondary { font-family: $font-secondary; }`
 - Use background shorthand as base, then override specific properties only
 - Group shared `::before`/`::after` styles together, then differentiate below
